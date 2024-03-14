@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/splide.min.css" />
+    <link rel="stylesheet" href="/css/fetch.css" />
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css
+    "
+    />
+    <!-- title n CC -->
+    <title>VOGUE: Fashion, Beauty, Celebrity, Fashion Shows | VOGUE</title>
+    <meta
+      name="title"
+      content="VOGUE: Fashion, Beauty, Celebrity, Fashion Shows | VOGUE"
+    />
+    <meta
+      name="description"
+      content="The latest fashion news, beauty coverage, celebrity style, fashion week updates, culture reviews, and videos on Vogue"
+    />
+    <meta name="author" content="Nina Lilac" />
+    <meta name="copyright" content="Copyright (c) Nina Lilac 2024" />
+
+    <!-- FONTS n ICON -->
+    <link rel="icon" href="img/vogue-emblem-png-logo-6.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Ojuju:wght@200..800&family=Teko:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body-vogue">
+    <!--Vogue Header BurgerBar -->
+    <header class="header-wrapper">
+      <div class="vogue-icon" id="vogue-icon">
+        <span class="#"></span>
+      </div>
+      <div id="menu" onclick="disableScroll()">
+        <ul>
+          <li><a href="" class="one">FASHION</a></li>
+          <li><a href="" class="one">BEAUTY</a></li>
+          <li><a href="" class="one">CULTURE</a></li>
+          <li><a href="" class="one">LIVING</a></li>
+          <li><a href="" class="one">NEWS</a></li>
+          <li><a href="" class="one">RUNWAY</a></li>
+          <li><a href="" class="one">SHOPPING</a></li>
+          <li><a href="" class="one">MET GALA</a></li>
+        </ul>
+      </div>
+      <section>
+        <h1 class="vogue-head">VOGUE</h1>
+      </section>
+    </header>
+    <section>
+      <div class="container" id="container-splide">
+        <div class="col-12">
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/slider-images/2.jpg" />
+                </li>
+                <li class="splide__slide">
+                  <img src="img/slider-images/3.jpg" />
+                </li>
+                <li class="splide__slide">
+                  <img src="img/slider-images/44.jpg" />
+                </li>
+                <li class="splide__slide">
+                  <img src="img/slider-images/444.jpg" />
+                </li>
+                <li class="splide__slide">
+                  <img src="img/slider-images/555.jpg" />
+                </li>
+                <li class="splide__slide">
+                  <img src="img/slider-images/666.jpg" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSTS -->
+    <section>
+      <div id="makeup-wrapper" class="makeup-container"></div>
+    </section>
+
+    <!--  -->
+
+    <section>
+      <div class="accordion">
+        <h2 class="title-ac">Fashion, Travel, MET GALA and more..</h2>
+        <div class="accordion-content">
+          <header>
+            <span class="accordion-content-title">
+              Where should I travel in Europe?
+            </span>
+            <i class="fa-solid fa-plus"></i>
+          </header>
+          <p class="accordion-content-description">
+            Paris, Milan, Barcelona, Amsterdam, Lisbon, Berlin ...
+          </p>
+        </div>
+        <div class="accordion-content">
+          <header>
+            <span class="accordion-content-title">
+              Which is the best season for travel?
+            </span>
+            <i class="fa-solid fa-plus"></i>
+          </header>
+          <p class="accordion-content-description">Spring, Autumn...</p>
+        </div>
+        <div class="accordion-content">
+          <header>
+            <span class="accordion-content-title"> Where should I eat? </span>
+            <i class="fa-solid fa-plus"></i>
+          </header>
+          <p class="accordion-content-description">
+            Restaurant1, Restaurant2, Restaurant3 ...
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!--  -->
+
+    <!-- JS -->
+    <script type="module" src="js/script.js"></script>
+    <script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+    <script src="node_modules/cookie/index.js"></script>
+  </body>
+</html>
