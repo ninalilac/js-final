@@ -2,14 +2,14 @@
 
 // import
 
-// import { splideJs } from "./splidemine.js";
+import { splideJs } from "./splidemine.js";
 
-// splideJs(); 
-// console.log(splideJs);
+splideJs(); 
+console.log(splideJs);
 
-//
 
-Navigation;
+
+// Navigation;
 
 const divBar = document.getElementById("menu");
 divBar.style.backgroundImage = "url('img/vogue2.jpg')";
