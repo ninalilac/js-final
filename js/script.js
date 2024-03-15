@@ -34,7 +34,8 @@ vogueIcon.addEventListener("click", function () {
 let productsData; // Declare a variable to store products data
 
 fetch(
-  "http://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Non-GMO&product_type=nail_polish"
+  "https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Non-GMO&product_type=nail_polish"
+
 )
   .then((response) => {
     if (!response.ok) {
