@@ -2,12 +2,6 @@
 
 // import
 
-import { splideJs } from "./splidemine.js";
-
-splideJs(); 
-console.log(splideJs);
-
-
 
 // Navigation;
 
@@ -127,3 +121,13 @@ function removeOpenedContent(index) {
     }
   });
 }
+
+
+//
+
+var splide = new Splide( '.splide', {
+  perPage: 3,
+  rewind : true,
+} );
+
+splide.mount();
