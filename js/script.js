@@ -2,9 +2,10 @@
 
 // import
 
-import { splideJs } from "./splidemine.js";
+// import { splideJs } from "./splidemine.js";
 
-splideJs();
+// splideJs(); 
+// console.log(splideJs);
 
 //
 
