@@ -1,0 +1,161 @@
+
+.vogue-icon {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    margin: 55px;
+    overflow: visible;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .vogue-icon span,
+  .vogue-icon span::before,
+  .vogue-icon span::after {
+    background: #000;
+    display: block;
+    height: 6px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.2s ease-in-out;
+   
+  }
+  
+  .vogue-icon span::before,
+  .vogue-icon span::after {
+    content: "";
+  }
+  
+  .vogue-icon span {
+    right: 0px;
+    top: 14px;
+    width: 29px;
+  }
+  .vogue-icon span:before {
+    left: 0px;
+    top: -10px;
+    width: 16px;
+  }
+  .vogue-icon span:after {
+    left: 0px;
+    top: 10px;
+    width: 20px;
+  }
+  
+  .vogue-icon.close span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 27px;
+  }
+  .vogue-icon.close span:before {
+    top: 0px;
+    transform: rotate(90deg);
+    width: 27px;
+  }
+  .vogue-icon.close span:after {
+    top: 0px;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+  }
+  #menu {
+    z-index: 999;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    padding-top: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #menu.overlay {
+    visibility: visible;
+    opacity: 1;
+    padding-top: 100px;
+  }
+  
+  #menu li {
+    list-style: none;
+  }
+  #menu a {
+    color: #9d0208;
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-decoration: none;
+  }
+  
+  #menu a:hover {
+    color: #ff3f0a;
+  }
+  
+  .vogue-head {
+    text-align: center;
+    font-size: 3rem;
+    font-style: bold;
+    margin: 40px 0;
+    color: #000;
+  }
+/*  */
+
+#listsection {
+    justify-content: block;
+    display: block;
+    text-align: center;
+    padding: 10rem 0;
+    margin: 0;
+    }
+    
+    .title {
+        color: red;
+        font-size: 2rem;
+    }
+    
+    #clear {
+        background-color:red;
+        margin: 20px 0;
+        font-size: 1.3rem;
+    }
+    
+    #clear:hover {
+        background-color: #ffd60a;
+    }
+    
+    
+    .btn {
+        background-color:red;
+        margin: 0 10px;
+        font-size: 1.3rem;
+    }
+    
+    .btn:hover {
+        background-color: #ffd60a;  
+    }
+    
+    
+    
+    #todo {
+        padding: 6px 6px;
+        color: #461113;
+        font-weight: bold;
+    }
+    
+    
+    #todo:hover {
+        background-color: #ffd60a;
+    }
+    
+    
+    
+    .list li {
+        font-size: 1.5rem;
+        font-weight: bold;
+        list-style-type: none;
+    }
+    
+
