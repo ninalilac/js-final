@@ -12,8 +12,6 @@
     />
     <link rel="stylesheet" href="css/fetch.css" />
 
- 
-
     <!--  -->
 
     <link
@@ -63,7 +61,7 @@
           <li><a href="accordion" class="one">NEWS</a></li>
           <li><a href="" class="one">RUNWAY</a></li>
           <li>
-            <a href="shopping.html" class="one">CREATE YOUR SHOPPING LIST</a>
+            <a href="listsection" class="one">CREATE YOUR SHOPPING LIST</a>
           </li>
           <li><a href="signup.html" class="one">SIGN UP</a></li>
         </ul>
@@ -146,7 +144,16 @@
     </section>
 
     <!--  -->
-    
+
+    <section id="listsection">
+      <h2 class="title">MY SHOPPING LIST</h2>
+      <form action=" " id="form">
+        <input type="text" id="todo" name="todo" />
+        <button type="submit" class="btn">ADD ITEM</button>
+      </form>
+      <ul class="list"></ul>
+      <button id="clear">DELETE ALL ITEMS</button>
+    </section>
 
     <!-- JS -->
     <script type="module" src="js/script.js"></script>

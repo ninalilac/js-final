@@ -13,6 +13,7 @@
     -webkit-font-smoothing: antialiased;
     font-family: "Teko", sans-serif;
     font-optical-sizing: auto;
+    background-color: antiquewhite;
  
   }
   img, picture, video, canvas, svg {

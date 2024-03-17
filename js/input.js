@@ -3,8 +3,9 @@
 
 //
 
+export * from "./input.js";
 
-
+// 
 const divBar = document.getElementById("menu");
 divBar.style.backgroundImage = "url('img/vogue2.jpg')";
 divBar.style.backgroundSize = "cover";
@@ -58,6 +59,6 @@ clear.addEventListener("click", function () {
 
 
 
-const newBackgroundImage = "url(img/background.jpg)"; 
+// const newBackgroundImage = "url(img/background.jpg)"; 
 
-document.body.style.backgroundImage = newBackgroundImage;
+// document.body.style.backgroundImage = newBackgroundImage;

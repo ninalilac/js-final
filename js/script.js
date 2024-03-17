@@ -2,7 +2,9 @@
 
 //
 
+import * as input from "./input.js";
 
+input;
 
 
 
