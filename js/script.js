@@ -1,5 +1,11 @@
 "use strict";
 
+//
+
+
+
+
+
 // Navigation;
 
 const divBar = document.getElementById("menu");

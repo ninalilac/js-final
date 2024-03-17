@@ -4,7 +4,6 @@
 //
 
 
-// Navigation;
 
 const divBar = document.getElementById("menu");
 divBar.style.backgroundImage = "url('img/vogue2.jpg')";

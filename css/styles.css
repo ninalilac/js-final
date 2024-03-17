@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 .vogue-icon {
   cursor: pointer;
   height: 30px;
@@ -26,7 +17,6 @@
   opacity: 1;
   position: absolute;
   transition: 0.2s ease-in-out;
- 
 }
 
 .vogue-icon span::before,
@@ -167,7 +157,7 @@
   padding: 0 15px;
 }
 
-/* Responsive adjustments */
+
 @media only screen and (max-width: 600px) {
   .makeup-container {
     padding: 10px;
@@ -190,6 +180,3 @@
 }
 
 
-
-/* 
- */

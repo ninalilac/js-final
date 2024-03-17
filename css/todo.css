@@ -159,3 +159,39 @@
     }
     
 
+
+    @media only screen and (max-width: 768px) {
+      .title {
+          font-size: 1.5rem;
+      }
+      
+      #clear, .btn {
+          font-size: 1rem;
+      }
+      
+      #todo {
+          font-size: 1rem;
+      }
+      
+      .list li {
+          font-size: 1.2rem;
+      }
+  }
+  
+  @media only screen and (max-width: 480px) {
+      .title {
+          font-size: 1.2rem;
+      }
+      
+      #clear, .btn {
+          font-size: 0.8rem;
+      }
+      
+      #todo {
+          font-size: 0.8rem;
+      }
+      
+      .list li {
+          font-size: 1rem;
+      }
+  }
