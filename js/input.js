@@ -6,22 +6,7 @@
 export * from "./input.js";
 
 // 
-const divBar = document.getElementById("menu");
-divBar.style.backgroundImage = "url('img/vogue2.jpg')";
-divBar.style.backgroundSize = "cover";
-divBar.style.backgroundPosition = "center";
 
-const vogueIcon = document.getElementById("vogue-icon");
-
-vogueIcon.addEventListener("click", function () {
-  this.classList.toggle("close");
-  divBar.classList.toggle("overlay");
-  if (divBar.classList.contains("overlay")) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "";
-  }
-});
 
 // ----- Input
 const inputElement = document.getElementById("todo");

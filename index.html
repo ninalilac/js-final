@@ -155,6 +155,95 @@
       <button id="clear">DELETE ALL ITEMS</button>
     </section>
 
+    <!--  -->
+
+    
+    <section class="contact-section">
+      <div class="inf-section">
+        <div class="left-inf">
+          <h1 class="contact-title
+          ">SIGN UP/REGISTRATION</h1>
+          <form class="form" action="" id="resgitration" method="post">
+            <div class="input-element">
+              <input
+                class="input-element"
+                type="text"
+                name="username"
+                placeholder="USERNAME"
+                id="usernamefield"
+              />
+              <p class="error-text" id="error-username"></p>
+            </div>
+            <div class="passfields">
+              <input
+                class="input-element"
+                type="password"
+                name="passw"
+                placeholder="PASSWORD"
+                id="passwordfield"
+              />
+              <i class="fa-regular fa-eye" id="showIcon"></i>
+              <p class="error-text" id="error-passw"></p>
+            </div>
+            <div class="passfields">
+              <input
+                class="input-element"
+                type="password"
+                name="passw2"
+                placeholder="REPEAT PASSWORD"
+                id="passwordfield2"
+              />
+              <i class="fa-regular fa-eye" id="showIcon2"></i>
+              <p class="error-text" id="error-passw2"></p>
+            </div>
+            <div>
+              <input
+                class="input-element"
+                type="email"
+                id="emailfield"
+                placeholder="E-MAIL"
+              />
+              <p class="error-text" id="error-email"></p>
+            </div>
+            <div class="genderx">
+              <input type="radio" name="gender" class="radio-class" />
+              <label for="">MALE</label>
+              <input type="radio" name="gender" class="radio-class" />
+              <label for="">FEMALE</label>
+              <p class="error-text" id="error-gender"></p>
+            </div>
+            <div class="genderx">
+              <input type="checkbox" id="agree" name="check" />
+              <label for="agree">I AGREE TERMS AND CONDITIONS</label>
+              <p class="error-text" id="error-check"></p>
+            </div>
+
+            <div class="form-element">
+              <label for="usercountry"></label>
+              <select class="select" name="country" id="usercountry">
+                <option value="none" selected disabled hidden>COUNTRY</option>
+                <option value="georgia">GEORGIA</option>
+                <option value="ITALY">ITALY</option>
+                
+                
+              </select>
+            </div>
+
+            <div class="form-elements">
+              <label for="user-message"></label>
+              <textarea
+                name="message"
+                id="user-message"
+                class="textarea-element"
+                placeholder="NOTIFICATION"
+              ></textarea>
+              <p class="error-text" id="error-message"></p>
+            </div>
+
+            <button class="btn-submit" type="submit">SUBMIT</button>
+          </form>
+        </div>
+
     <!-- JS -->
     <script type="module" src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>

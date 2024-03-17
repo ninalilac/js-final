@@ -1,3 +1,6 @@
+
+
+/* navigation */
 .vogue-icon {
   cursor: pointer;
   height: 30px;
@@ -157,29 +160,9 @@
   padding: 0 15px;
 }
 
-@media only screen and (max-width: 600px) {
-  .makeup-container {
-    padding: 10px;
-    border-radius: 10px;
-  }
 
-  .product-title {
-    font-size: 1.4em;
-  }
 
-  .product-item {
-    flex-direction: column;
-  }
-
-  .product-image {
-    flex: 0 0 100%;
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-}
-
-/* 
- */
+/* shopping list*/
 
 #listsection {
   justify-content: block;
@@ -230,24 +213,7 @@
   list-style-type: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .title {
-    font-size: 1.5rem;
-  }
 
-  #clear,
-  .btn {
-    font-size: 1rem;
-  }
-
-  #todo {
-    font-size: 1rem;
-  }
-
-  .list li {
-    font-size: 1.2rem;
-  }
-}
 
 @media only screen and (max-width: 480px) {
   .title {
@@ -265,5 +231,106 @@
 
   .list li {
     font-size: 1rem;
+    .makeup-container {
+      padding: 10px;
+      border-radius: 10px;
+    }
+  
+    .product-title {
+      font-size: 1.4em;
+    }
+  
+    .product-item {
+      flex-direction: column;
+    }
+  
+    .product-image {
+      flex: 0 0 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    
   }
+} }
+
+
+
+.contact-section {
+  max-width: 800px;
+  margin-left: 25%;
+  /* background-color: #fff; */
+  padding: 10px;
+  /* border-radius: 10px; */
+  /* box-shadow: 0px 0px 10 #fff; */
+}
+
+.inf-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-inf {
+  flex: 1;
+}
+
+.form {
+  margin-top: 20px;
+}
+
+.input-element,
+.select,
+.textarea-element {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid red;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.passfields {
+  position: relative;
+}
+
+.fa-regular {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.genderx {
+  margin-bottom: 15px;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: #a12c2c;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #1d2c3d;
+}
+
+.error-text {
+  margin-top: 5px;
+  font-size: 14px;
+  color: red;
+}
+
+
+.contact-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: bold;
+  margin: 40px 0;
+  color: #000;
 }
