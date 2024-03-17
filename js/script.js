@@ -4,9 +4,7 @@
 
 import * as input from "./input.js";
 
-
 input;
-
 
 // Navigation;
 
@@ -106,9 +104,7 @@ function displayProducts(products) {
   }
 }
 
-// npm
-
-//
+// ACCORDION
 
 const divAccordion = document.querySelectorAll(".container-accordion");
 
@@ -119,7 +115,6 @@ for (let item of divAccordion) {
   });
 }
 
-//
 const accordionContent = document.querySelectorAll(".accordion-content");
 
 accordionContent.forEach((item, index) => {
@@ -161,3 +156,178 @@ var splide = new Splide(".splide", {
 splide.mount();
 
 //
+
+//
+
+// ---- form element
+const formElement = document.getElementById("registration");
+
+formElement.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const errors = {};
+
+  let usernameValue = document.getElementById("usernamefield").value;
+
+  if (usernameValue == "") {
+    errors.username = "Please fill in the username field.";
+  }
+
+  let passwValue = document.getElementById("passwordfield").value;
+  let passw2Value = document.getElementById("passwordfield2").value;
+
+  if (passwValue == "") {
+    errors.passw = "Password field is empty.";
+  }
+
+  if (passwValue != passw2Value) {
+    errors.passw2 = "Passwords do not match.";
+  }
+
+  let gender = false;
+
+  formElement.querySelectorAll('[name = "gender"]').forEach((item) => {
+    if (item.checked) {
+      gender = true;
+    }
+  });
+
+  if (!gender) {
+    errors.gender = "Please select a gender.";
+  }
+
+  let messageValue = document.getElementById("user-message").value;
+
+  if (messageValue == "") {
+    errors.message = "Please fill in the message field.";
+  }
+
+  let emailValue = document.getElementById("emailfield").value;
+
+  if (emailValue == "") {
+    errors.email = "Please fill in the email field.";
+  }
+
+  let checkInput = document.getElementById("agree").checked;
+
+  if (!checkInput) {
+    errors.check = "Please agree to the terms and conditions.";
+  }
+
+  formElement.querySelectorAll(".error-text").forEach((el) => {
+    el.textContent = " ";
+  });
+
+  for (let item in errors) {
+    let errorPelement = document.getElementById("error-" + item);
+    if (errorPelement) {
+      errorPelement.textContent = errors[item];
+    }
+  }
+
+  if (Object.keys(errors).length == 0) {
+    formElement.submit();
+  }
+});
+
+let passwShow = document.getElementById("passwordfield");
+let passwShow2 = document.getElementById("passwordfield2");
+let icon = document.getElementById("showIcon");
+let icon2 = document.getElementById("showIcon2");
+
+icon.addEventListener("click", function () {
+  if (passwShow.type == "password") {
+    passwShow.setAttribute("type", "text");
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+  } else {
+    passwShow.setAttribute("type", "password");
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+  }
+});
+
+icon2.addEventListener("click", function () {
+  if (passwShow2.type == "password") {
+    passwShow2.setAttribute("type", "text");
+    icon2.classList.remove("fa-eye");
+    icon2.classList.add("fa-eye-slash");
+  } else {
+    passwShow2.setAttribute("type", "password");
+    icon2.classList.remove("fa-eye-slash");
+    icon2.classList.add("fa-eye");
+  }
+});
+
+let email = document.getElementById("emailfield");
+
+function validationEmail() {
+  let emailValue = document.getElementById("emailfield").value;
+  let textError = document.getElementById("error-email");
+  let emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (emailPattern.test(emailValue)) {
+    textError.innerText = "Email is correct";
+    textError.style.color = "green";
+  } else {
+    textError.innerText = "Email is incorrect";
+    textError.style.color = "red";
+  }
+
+  if (emailValue == "") {
+    textError.innerHTML = "";
+  }
+}
+
+email.addEventListener("keyup", validationEmail);
+//
+
+
+
+const ulResult = document.querySelector(".container-filter #result");
+const inputField = document.querySelector(".container-filter #filter");
+let listItems = [];
+
+async function fetchData() {
+  try {
+    const response = await fetch("https://reqres.in/api/users?delay=3");
+    if (!response.ok) {
+      throw new Error("Can't fetch data");
+    }
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+async function displayData() {
+  const users = await fetchData();
+  users.forEach((user) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <img src="${user.avatar}" alt="face">
+      <span>${user.first_name} ${user.last_name}</span>
+    `;
+    listItems.push(li);
+    ulResult.appendChild(li);
+  });
+}
+
+function filterData(searchItem) {
+  listItems.forEach((item) => {
+    const userName = item.querySelector("span").textContent.toLowerCase();
+    if (userName.includes(searchItem.toLowerCase())) {
+      item.classList.remove("hide");
+    } else {
+      item.classList.add("hide");
+    }
+  });
+}
+
+inputField.addEventListener("input", function () {
+  filterData(this.value);
+});
+
+// Initial display
+displayData();
