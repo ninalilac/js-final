@@ -41,9 +41,3 @@ form.addEventListener("submit", function (e) {
 clear.addEventListener("click", function () {
   ulItems.innerHTML = "";
 });
-
-
-
-// const newBackgroundImage = "url(img/background.jpg)"; 
-
-// document.body.style.backgroundImage = newBackgroundImage;

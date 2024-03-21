@@ -106,45 +106,7 @@ function displayProducts(products) {
 
 // ACCORDION
 
-const divAccordion = document.querySelectorAll(".container-accordion");
 
-//
-for (let item of divAccordion) {
-  item.addEventListener("click", function (e) {
-    this.classList.toggle("active");
-  });
-}
-
-const accordionContent = document.querySelectorAll(".accordion-content");
-
-accordionContent.forEach((item, index) => {
-  let header = item.querySelector("header");
-  header.addEventListener("click", () => {
-    item.classList.toggle("is-open");
-
-    let description = item.querySelector(".accordion-content-description");
-    if (item.classList.contains("is-open")) {
-      description.style.height = `${description.scrollHeight}px`;
-      item.querySelector("i").classList.replace("fa-plus", "fa-minus");
-    } else {
-      description.style.height = "0px";
-      item.querySelector("i").classList.replace("fa-minus", "fa-plus");
-    }
-    // function to pass the index number of clicked header
-    removeOpenedContent(index);
-  });
-});
-
-function removeOpenedContent(index) {
-  accordionContent.forEach((item2, index2) => {
-    if (index != index2) {
-      item2.classList.remove("is-open");
-      let descrip = item2.querySelector(".accordion-content-description");
-      descrip.style.height = "0px";
-      item2.querySelector("i").classList.replace("fa-minus", "fa-plus");
-    }
-  });
-}
 
 //
 
@@ -283,51 +245,3 @@ email.addEventListener("keyup", validationEmail);
 //
 
 
-
-const ulResult = document.querySelector(".container-filter #result");
-const inputField = document.querySelector(".container-filter #filter");
-let listItems = [];
-
-async function fetchData() {
-  try {
-    const response = await fetch("https://reqres.in/api/users?delay=3");
-    if (!response.ok) {
-      throw new Error("Can't fetch data");
-    }
-    const data = await response.json();
-    return data.data;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-async function displayData() {
-  const users = await fetchData();
-  users.forEach((user) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <img src="${user.avatar}" alt="face">
-      <span>${user.first_name} ${user.last_name}</span>
-    `;
-    listItems.push(li);
-    ulResult.appendChild(li);
-  });
-}
-
-function filterData(searchItem) {
-  listItems.forEach((item) => {
-    const userName = item.querySelector("span").textContent.toLowerCase();
-    if (userName.includes(searchItem.toLowerCase())) {
-      item.classList.remove("hide");
-    } else {
-      item.classList.add("hide");
-    }
-  });
-}
-
-inputField.addEventListener("input", function () {
-  filterData(this.value);
-});
-
-// Initial display
-displayData();
