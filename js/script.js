@@ -27,7 +27,8 @@ vogueIcon.addEventListener("click", function () {
 
 //
 
-//
+// fetch
+
 document.addEventListener("DOMContentLoaded", function () {
   let productsData;
   fetch(
@@ -104,9 +105,7 @@ function displayProducts(products) {
   }
 }
 
-// ACCORDION
-
-
+//
 
 //
 
@@ -242,6 +241,23 @@ function validationEmail() {
 }
 
 email.addEventListener("keyup", validationEmail);
+
 //
 
+//
 
+const accordionTitles = document.querySelectorAll(".accordionTitle");
+
+accordionTitles.forEach((accordionTitle) => {
+  accordionTitle.addEventListener("click", () => {
+    if (accordionTitle.classList.contains("is-open")) {
+      accordionTitle.classList.remove("is-open");
+    } else {
+      const accordionTitlesWithIsOpen = document.querySelectorAll(".is-open");
+      accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
+        accordionTitleWithIsOpen.classList.remove("is-open");
+      });
+      accordionTitle.classList.add("is-open");
+    }
+  });
+});

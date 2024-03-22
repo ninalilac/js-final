@@ -101,7 +101,6 @@
   color: #000;
 }
 
-
 /* shopping list*/
 
 #listsection {
@@ -310,8 +309,6 @@
 
 /*  */
 
-
-
 /* footer */
 
 .footer {
@@ -362,4 +359,41 @@
 .footer-bottom p {
   font-size: 14px;
   color: #666;
+}
+
+/* filter */
+
+/* 
+ */
+
+
+
+.accordionTitle {
+  cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  
+}
+
+.accordionTitle:hover {
+  background-color: #9d0208;
+}
+
+.accordion {
+  text-align: center;
+}
+
+.accordionContent p {
+  text-align: center;
+}
+.accordionTitle + .accordionContent {
+  display: none;
+
+}
+
+.accordionTitle.is-open + .accordionContent {
+  display: block;
 }
