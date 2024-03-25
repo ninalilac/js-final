@@ -381,6 +381,8 @@
 
 .accordion {
     text-align: center;
+    margin: 70px 0 20px;
+    background-color: lightcoral;
 }
 
 .accordionContent p {
@@ -445,4 +447,7 @@
 
 .h2-t {
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: lightblue;
 }
