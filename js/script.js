@@ -15,94 +15,94 @@ divBar.style.backgroundPosition = "center";
 
 const vogueIcon = document.getElementById("vogue-icon");
 
-vogueIcon.addEventListener("click", function () {
-  this.classList.toggle("close");
-  divBar.classList.toggle("overlay");
-  if (divBar.classList.contains("overlay")) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "";
-  }
+vogueIcon.addEventListener("click", function() {
+    this.classList.toggle("close");
+    divBar.classList.toggle("overlay");
+    if (divBar.classList.contains("overlay")) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "";
+    }
 });
 
 //
 
 // fetch
 
-document.addEventListener("DOMContentLoaded", function () {
-  let productsData;
-  fetch(
-    "https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Non-GMO&product_type=nail_polish"
-  )
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      productsData = data;
+document.addEventListener("DOMContentLoaded", function() {
+    let productsData;
+    fetch(
+            "https://makeup-api.herokuapp.com/api/v1/products.json?product_tags=Non-GMO&product_type=nail_polish"
+        )
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Error: ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            productsData = data;
 
-      displayProducts(productsData);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+            displayProducts(productsData);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 });
 
 function displayProducts(products) {
-  const productsContainer = document.getElementById("makeup-wrapper");
-  const productList = document.createElement("ul");
-  productList.classList.add("product-list");
-  const productTitle = document.createElement("h2");
-  productTitle.classList.add("product-title");
-  productTitle.textContent = "Nail Polish";
+    const productsContainer = document.getElementById("makeup-wrapper");
+    const productList = document.createElement("ul");
+    productList.classList.add("product-list");
+    const productTitle = document.createElement("h2");
+    productTitle.classList.add("product-title");
+    productTitle.textContent = "Nail Polish";
 
-  productsContainer.innerHTML = ""; // Clear existing content
-  productsContainer.appendChild(productTitle);
-  productsContainer.appendChild(productList);
+    productsContainer.innerHTML = ""; // Clear existing content
+    productsContainer.appendChild(productTitle);
+    productsContainer.appendChild(productList);
 
-  if (products && products.length > 0) {
-    products.forEach((product) => {
-      const productItem = document.createElement("li");
-      productItem.classList.add("product-item");
+    if (products && products.length > 0) {
+        products.forEach((product) => {
+            const productItem = document.createElement("li");
+            productItem.classList.add("product-item");
 
-      const productImage = document.createElement("img");
-      productImage.src = product.image_link;
-      productImage.alt = product.name;
-      productImage.classList.add("product-image");
-      productImage.style.maxWidth = "100px";
-      productImage.style.maxHeight = "100px";
+            const productImage = document.createElement("img");
+            productImage.src = product.image_link;
+            productImage.alt = product.name;
+            productImage.classList.add("product-image");
+            productImage.style.maxWidth = "100px";
+            productImage.style.maxHeight = "100px";
 
-      const productDetails = document.createElement("div");
-      productDetails.classList.add("product-details");
+            const productDetails = document.createElement("div");
+            productDetails.classList.add("product-details");
 
-      const productName = document.createElement("strong");
-      productName.classList.add("product-name");
-      productName.textContent = product.name;
+            const productName = document.createElement("strong");
+            productName.classList.add("product-name");
+            productName.textContent = product.name;
 
-      const brandInfo = document.createElement("p");
-      brandInfo.classList.add("product-info");
-      brandInfo.textContent = `Brand: ${product.brand}`;
+            const brandInfo = document.createElement("p");
+            brandInfo.classList.add("product-info");
+            brandInfo.textContent = `Brand: ${product.brand}`;
 
-      const priceInfo = document.createElement("p");
-      priceInfo.classList.add("product-info");
-      priceInfo.textContent = `Price: ${product.price}`;
+            const priceInfo = document.createElement("p");
+            priceInfo.classList.add("product-info");
+            priceInfo.textContent = `Price: ${product.price}`;
 
-      productDetails.appendChild(productName);
-      productDetails.appendChild(brandInfo);
-      productDetails.appendChild(priceInfo);
+            productDetails.appendChild(productName);
+            productDetails.appendChild(brandInfo);
+            productDetails.appendChild(priceInfo);
 
-      productItem.appendChild(productImage);
-      productItem.appendChild(productDetails);
+            productItem.appendChild(productImage);
+            productItem.appendChild(productDetails);
 
-      productList.appendChild(productItem);
-    });
-  } else {
-    const noProductItem = document.createElement("li");
-    noProductItem.textContent = "No products available";
-    productList.appendChild(noProductItem);
-  }
+            productList.appendChild(productItem);
+        });
+    } else {
+        const noProductItem = document.createElement("li");
+        noProductItem.textContent = "No products available";
+        productList.appendChild(noProductItem);
+    }
 }
 
 //
@@ -110,8 +110,8 @@ function displayProducts(products) {
 //
 
 var splide = new Splide(".splide", {
-  perPage: 3,
-  rewind: true,
+    perPage: 3,
+    rewind: true,
 });
 
 splide.mount();
@@ -123,72 +123,72 @@ splide.mount();
 // ---- form element
 const formElement = document.getElementById("registration");
 
-formElement.addEventListener("submit", function (event) {
-  event.preventDefault();
+formElement.addEventListener("submit", function(event) {
+    event.preventDefault();
 
-  const errors = {};
+    const errors = {};
 
-  let usernameValue = document.getElementById("usernamefield").value;
+    let usernameValue = document.getElementById("usernamefield").value;
 
-  if (usernameValue == "") {
-    errors.username = "Please fill in the username field.";
-  }
-
-  let passwValue = document.getElementById("passwordfield").value;
-  let passw2Value = document.getElementById("passwordfield2").value;
-
-  if (passwValue == "") {
-    errors.passw = "Password field is empty.";
-  }
-
-  if (passwValue != passw2Value) {
-    errors.passw2 = "Passwords do not match.";
-  }
-
-  let gender = false;
-
-  formElement.querySelectorAll('[name = "gender"]').forEach((item) => {
-    if (item.checked) {
-      gender = true;
+    if (usernameValue == "") {
+        errors.username = "Please fill in the username field.";
     }
-  });
 
-  if (!gender) {
-    errors.gender = "Please select a gender.";
-  }
+    let passwValue = document.getElementById("passwordfield").value;
+    let passw2Value = document.getElementById("passwordfield2").value;
 
-  let messageValue = document.getElementById("user-message").value;
-
-  if (messageValue == "") {
-    errors.message = "Please fill in the message field.";
-  }
-
-  let emailValue = document.getElementById("emailfield").value;
-
-  if (emailValue == "") {
-    errors.email = "Please fill in the email field.";
-  }
-
-  let checkInput = document.getElementById("agree").checked;
-
-  if (!checkInput) {
-    errors.check = "Please agree to the terms and conditions.";
-  }
-
-  formElement.querySelectorAll(".error-text").forEach((el) => {
-    el.textContent = " ";
-  });
-
-  for (let item in errors) {
-    let errorPelement = document.getElementById("error-" + item);
-    if (errorPelement) {
-      errorPelement.textContent = errors[item];
+    if (passwValue == "") {
+        errors.passw = "Password field is empty.";
     }
-  }
 
-  if (Object.keys(errors).length == 0) {
-    formElement.submit();
-  }
+    if (passwValue != passw2Value) {
+        errors.passw2 = "Passwords do not match.";
+    }
+
+    let gender = false;
+
+    formElement.querySelectorAll('[name = "gender"]').forEach((item) => {
+        if (item.checked) {
+            gender = true;
+        }
+    });
+
+    if (!gender) {
+        errors.gender = "Please select a gender.";
+    }
+
+    let messageValue = document.getElementById("user-message").value;
+
+    if (messageValue == "") {
+        errors.message = "Please fill in the message field.";
+    }
+
+    let emailValue = document.getElementById("emailfield").value;
+
+    if (emailValue == "") {
+        errors.email = "Please fill in the email field.";
+    }
+
+    let checkInput = document.getElementById("agree").checked;
+
+    if (!checkInput) {
+        errors.check = "Please agree to the terms and conditions.";
+    }
+
+    formElement.querySelectorAll(".error-text").forEach((el) => {
+        el.textContent = " ";
+    });
+
+    for (let item in errors) {
+        let errorPelement = document.getElementById("error-" + item);
+        if (errorPelement) {
+            errorPelement.textContent = errors[item];
+        }
+    }
+
+    if (Object.keys(errors).length == 0) {
+        formElement.submit();
+    }
 });
 
 let passwShow = document.getElementById("passwordfield");
@@ -196,48 +196,48 @@ let passwShow2 = document.getElementById("passwordfield2");
 let icon = document.getElementById("showIcon");
 let icon2 = document.getElementById("showIcon2");
 
-icon.addEventListener("click", function () {
-  if (passwShow.type == "password") {
-    passwShow.setAttribute("type", "text");
-    icon.classList.remove("fa-eye");
-    icon.classList.add("fa-eye-slash");
-  } else {
-    passwShow.setAttribute("type", "password");
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-  }
+icon.addEventListener("click", function() {
+    if (passwShow.type == "password") {
+        passwShow.setAttribute("type", "text");
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        passwShow.setAttribute("type", "password");
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
 });
 
-icon2.addEventListener("click", function () {
-  if (passwShow2.type == "password") {
-    passwShow2.setAttribute("type", "text");
-    icon2.classList.remove("fa-eye");
-    icon2.classList.add("fa-eye-slash");
-  } else {
-    passwShow2.setAttribute("type", "password");
-    icon2.classList.remove("fa-eye-slash");
-    icon2.classList.add("fa-eye");
-  }
+icon2.addEventListener("click", function() {
+    if (passwShow2.type == "password") {
+        passwShow2.setAttribute("type", "text");
+        icon2.classList.remove("fa-eye");
+        icon2.classList.add("fa-eye-slash");
+    } else {
+        passwShow2.setAttribute("type", "password");
+        icon2.classList.remove("fa-eye-slash");
+        icon2.classList.add("fa-eye");
+    }
 });
 
 let email = document.getElementById("emailfield");
 
 function validationEmail() {
-  let emailValue = document.getElementById("emailfield").value;
-  let textError = document.getElementById("error-email");
-  let emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    let emailValue = document.getElementById("emailfield").value;
+    let textError = document.getElementById("error-email");
+    let emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-  if (emailPattern.test(emailValue)) {
-    textError.innerText = "Email is correct";
-    textError.style.color = "green";
-  } else {
-    textError.innerText = "Email is incorrect";
-    textError.style.color = "red";
-  }
+    if (emailPattern.test(emailValue)) {
+        textError.innerText = "Email is correct";
+        textError.style.color = "green";
+    } else {
+        textError.innerText = "Email is incorrect";
+        textError.style.color = "red";
+    }
 
-  if (emailValue == "") {
-    textError.innerHTML = "";
-  }
+    if (emailValue == "") {
+        textError.innerHTML = "";
+    }
 }
 
 email.addEventListener("keyup", validationEmail);
@@ -249,15 +249,67 @@ email.addEventListener("keyup", validationEmail);
 const accordionTitles = document.querySelectorAll(".accordionTitle");
 
 accordionTitles.forEach((accordionTitle) => {
-  accordionTitle.addEventListener("click", () => {
-    if (accordionTitle.classList.contains("is-open")) {
-      accordionTitle.classList.remove("is-open");
-    } else {
-      const accordionTitlesWithIsOpen = document.querySelectorAll(".is-open");
-      accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
-        accordionTitleWithIsOpen.classList.remove("is-open");
-      });
-      accordionTitle.classList.add("is-open");
+    accordionTitle.addEventListener("click", () => {
+        if (accordionTitle.classList.contains("is-open")) {
+            accordionTitle.classList.remove("is-open");
+        } else {
+            const accordionTitlesWithIsOpen = document.querySelectorAll(".is-open");
+            accordionTitlesWithIsOpen.forEach((accordionTitleWithIsOpen) => {
+                accordionTitleWithIsOpen.classList.remove("is-open");
+            });
+            accordionTitle.classList.add("is-open");
+        }
+    });
+});
+
+//
+
+let ulResult = document.getElementById("result");
+let inputField = document.getElementById("filter");
+
+let listItems = [];
+
+async function asyncFncfetch() {
+    const response = await fetch("https://reqres.in/api/users?delay=3");
+    // console.log(response);
+    if (!response.ok) {
+        throw new Error("can not fetch data");
     }
-  });
+    const recinf = await response.json();
+    return recinf;
+}
+
+asyncFncfetch()
+    .then((responseData) => {
+        responseData.data.forEach((element) => {
+            let li = document.createElement("li");
+            li.textContent = `${element.first_name} ${element.last_name}`;
+
+            const UsPic = document.createElement("img");
+            UsPic.setAttribute("src", element.avatar);
+            UsPic.setAttribute("alt", "face");
+            li.appendChild(UsPic);
+
+            listItems.push(li);
+            ulResult.appendChild(li);
+        });
+    })
+    .catch((err) => {
+        if (err == 404) console.log("Page Not Found");
+    });
+
+function filterData(searchItem) {
+    listItems.forEach((item) => {
+        const text = item.textContent || item.innerText;
+        if (text.toLowerCase().includes(searchItem.toLowerCase())) {
+            item.style.display = "block"; // Show the list item
+        } else {
+            item.style.display = "none"; // Hide the list item
+        }
+    });
+}
+
+
+inputField.addEventListener("keyup", function() {
+    filterData(this.value);
 });
